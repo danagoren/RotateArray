@@ -1,0 +1,23 @@
+public class Solution {
+    public void Rotate(int[] nums, int k) {
+        while (k>=nums.Length){
+            k-=nums.Length;
+        }
+        int[] extras = new int[k];
+        int i = 0;
+        while (i<k){
+            extras[i]=nums[nums.Length-k+i];
+            i++;
+        }
+        i=nums.Length-1;
+        while(i>=k){
+            nums[i]=nums[i-k];
+            i--;
+        }
+        i=0;
+        while (i<k){
+            nums[i]=extras[i];
+            i++;
+        }
+    }
+}
